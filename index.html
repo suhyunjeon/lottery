@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Beautiful Developers</title>
+    <style type="text/css">
+        #lotteryContainer {
+            position:relative;
+            width: 300px;
+            height:100px;
+        }
+        #drawPercent {
+            color:#F60;
+        }
+        html,
+        body {
+            height: 100%;
+        }
+        .bg-1 {
+          background-color: #1abc9c;
+          color: #ffffff;
+      }
+      .bg-2 {
+          background-color: #efbace;
+          color: #ffffff;
+      }
+      .bg-3 {
+          background-color: #ffffff;
+          color: #555555;
+      }
+      .container-fluid {
+          padding-top: 70px;
+          padding-bottom: 70px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid bg-2 text-center">
+  <h1>여개모, 10살 축하해!</h1>
+  <p>&nbsp;</p>
+  <a href="#" id="freshBtn" class="btn btn-default btn-lg">Click me!</a>
+</div>
+
+<div class="container text-center">
+  <h3>&nbsp;</h3>
+
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+         <div class="container " id="lotteryContainer" ></div>
+        <script src="Lottery.js"></script>
+        <script>
+            window.onload = function () {
+                var lottery = new Lottery('lotteryContainer', '#CCC', 'color', 304, 236, drawPercent);
+                lottery.init('images/wd_logo.png', 'image');
+
+                document.getElementById('freshBtn').onclick = function() {
+                    drawPercentNode.innerHTML = '';
+                    lottery.init(getRandomStr(), 'text');
+                }
+
+                var drawPercentNode = document.getElementById('drawPercent');
+
+                function drawPercent(percent) {
+                    drawPercentNode.innerHTML = '';
+                }
+            }
+
+            function getRandomStr() {
+                var peoples = ["A", "B", "C"]
+                return peoples[Math.floor(Math.random() * peoples.length)]
+            }
+        </script>
+      </div>
+    </div>
+
+  <!--<div class="row" align="center">-->
+    <!--<div class="col-sm-4">-->
+
+    <label><span id="drawPercent"></span></label>
+  </div>
+</div>
+</body>
+</html>
