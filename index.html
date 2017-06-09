@@ -32,6 +32,7 @@
           padding-top: 70px;
           padding-bottom: 70px;
       }
+
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -52,7 +53,6 @@
 
 <div class="container text-center">
   <h3>&nbsp;</h3>
-
     <div class="container">
       <div class="col-md-8 col-md-offset-2">
          <div class="container " id="lotteryContainer" ></div>
@@ -75,16 +75,12 @@
             }
 
             function getRandomStr() {
-                var peoples = ["A", "B", "C"]
+                var peoples = ["A", "B"];
                 return peoples[Math.floor(Math.random() * peoples.length)]
             }
         </script>
       </div>
     </div>
-
-  <!--<div class="row" align="center">-->
-    <!--<div class="col-sm-4">-->
-
     <label><span id="drawPercent"></span></label>
   </div>
 </div>
